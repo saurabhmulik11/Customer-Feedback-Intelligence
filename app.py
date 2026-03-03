@@ -34,13 +34,17 @@ mode = st.sidebar.radio(
 
 
 
+# @st.cache_resource
+# def load_lr():
+#     # model = joblib.load(r'C:\Users\HP\DATA_SCIENCE\Projects\NLP\LR_tfidf_combined.pkl')
+#     model = joblib.load("LR_tfidf_combined.pkl")
+#     return model
+
 @st.cache_resource
 def load_lr():
-    model = joblib.load(r'C:\Users\HP\DATA_SCIENCE\Projects\NLP\LR_tfidf_combined.pkl')
-    return model
+    return joblib.load("LR_tfidf_combined.pkl")
 
 @st.cache_resource
-
 def load_bilstm():
     model = load_model(
     r"C:\Users\HP\DATA_SCIENCE\Projects\NLP\sentiment_bilstm_glove_model.keras"
